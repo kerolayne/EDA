@@ -6,6 +6,13 @@
     //vetores ==  ponteiro imutável
     //alocação dinamica
     //ponteiros para ponteiros
+void mostra_vetor(int *p, int k){
+    int i;
+    
+    for(i = 0; i < k; i ++){
+        printf("%d : %d\n", i, *(p + i));
+    }
+}
 
 int main (){
 
@@ -31,5 +38,7 @@ int main (){
     printf("ha %d valores positivos\n", cont);
 
     free(v);
+    
+    mostra_vetor(v,n);
     return 0;
 }
