@@ -12,6 +12,13 @@ void mostra_vetor(int *p, int k){
     for(i = 0; i < k; i ++){
         printf("%d : %d\n", i, *(p + i));
     }
+    
+    /*
+    int *i;
+    for (i = p; i < p + k ; i++) {
+        printf("%d: %d\n", i - p, *i );
+
+    }*/
 }
 
 int main (){
