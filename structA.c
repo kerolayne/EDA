@@ -36,5 +36,7 @@ int main(int argc, char const *argv[]) {
     x=y;//funciona x recebe y
 
     printf("X:\nnum:%d\nsaldo:R$%.2f\nCliente:%s\n", x.num, x.saldo, x.cliente);
+    
+    printf("tamanho da struct em bites: %ld\n",sizeof(Cont) );
     return 0;
 }
