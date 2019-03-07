@@ -11,7 +11,7 @@ STRUCT
 
 */
 
-typedef struct conta{
+typedef struct conta/*opcional*/{
     int num;
     float saldo;
     char cliente[30];
