@@ -1,5 +1,7 @@
 #include <string.h>
-#include "pilhaGenerica.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include "pilha.h"
 
 void inicializa_pilha(PilhaGenerica *p, int t, int c){
   p->dados =  malloc(sizeof(void *)*c);
@@ -9,11 +11,11 @@ void inicializa_pilha(PilhaGenerica *p, int t, int c){
 }
 //pilha cheia /pilha vasia
 
-int empilha(PilhaGenerica *p, void *emp){
+int empilha(PilhaGenerica *p, void *info){
   if(pilha_cheia(*p))
     return ERRO_PILHA_CHEIA;
   p->topo++;
-  p->dados[p->topo] = molloc(p->tamInfo);
+  p->dados[p->topo] = malloc(p->tamInfo);
 
   memcpy(p->dados[p->topo], info, p->tamInfo);
 
@@ -23,7 +25,7 @@ int empilha(PilhaGenerica *p, void *emp){
 int desempilha(PilhaGenerica *p, void *info ){
   if(pilha_vazia(*p))
     return ERRO_PILHA_VAZIA;
-  memcpy(info, p->dados[p->topo], p->taminfo);
+  memcpy(info, p->dados[p->topo], p->tamInfo);
   free(p->dados[p->topo]);
   p->topo--;
 
@@ -42,10 +44,19 @@ void mostra_pilha(PilhaGenerica p, void(*mostra)(void*)){
   }
 }
 
-void desaloca_pilha(PilhaGenerica *p){
+void desaloca(PilhaGenerica *p){
   int i;
   for(i = 0; i <= p->topo; i++){
     free(p->dados[i]);
   }
   free(p->dados);
+}
+int pilha_vazia(PilhaGenerica p){
+  if(p.topo == -1)
+    return 1;
+  else
+    return 0;
+}
+int pilha_cheia(PilhaGenerica  p){
+  return p.topo == p.capacidade -1;
 }
