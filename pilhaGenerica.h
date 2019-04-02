@@ -4,13 +4,13 @@
 typedef struct{
   void **dados;
   int topo, capacidade;
-  ,int tamInfo;
+  int tamInfo;
 }PilhaGenerica;
 
-vvoid inicializa_pilha(PilhaGenerica *p, int t, int c);
+void inicializa_pilha(PilhaGenerica *p, int t, int c);
 int pilha_vazia(PilhaGenerica p);
-int emplilha(PilhaGenerica *p, int info);
-int desempilha(PilhaGenerica  *p, int info);
+int empilha(PilhaGenerica *p, void *info);
+int desempilha(PilhaGenerica *p, void *info );
 int pilha_cheia(PilhaGenerica  p);
 void desaloca(PilhaGenerica  *p);
-void mostra_pilha(PilhaGenerica  p);
+void mostra_pilha(PilhaGenerica p, void(*mostra)(void*));
