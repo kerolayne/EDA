@@ -1,0 +1,10 @@
+-- estrutura linear cujo o acesso é feito em ambas as extremidades:
+**fim: insere
+**inicio: remove
+
+FIFO!!!!!!!!!!!!!!!!
+
+TIPO:
+
+-- FILA DE PRIORIDADE
+-- duplo fim
