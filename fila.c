@@ -18,7 +18,7 @@ int fila_cheia(Fila f){
 
 int inserir(Fila *p, int info){
   if (fila_cheia(*p))
-    return ERRO_FILA_CHEIA
+    return ERRO_FILA_CHEIA;
   p->num_ele++;
   p->dados[p->fim] = info;
   if(p->fim == p->capacidade -1)
@@ -32,7 +32,7 @@ int remover(Fila *p, int *info){
   if(fila_vazia(*p))
     return ERRO_FILA_VAZIA;
   p->num_ele --;
-  *info = p->dados[p->inicio;
+  *info = p->dados[p->inicio];
   if(p->inicio == p->capacidade -1)
     p->inicio = 0;
   else
