@@ -1,0 +1,9 @@
+/*--------------------------------listas-------------------------*/
+
+//Estrutura linear;
+
+//acesso pode ser através de indices;
+//funcionalidades:
+  //Inserção: no inicio, no fim, numa posição, em ordem ... 
+  //Remoção: no inicio, no fim, numa posição, em ordem ...
+  //Modifição/ Leitura : em uma posição.
