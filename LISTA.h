@@ -2,11 +2,18 @@
 
 typedef struct ele{
     void *info;
-    struct ele *proximo; 
-    
-}Elemento; 
+    struct ele *proximo;
+
+}Elemento;
 
 typedef struct{
-  Elemento *cabeca; 
+  Elemento *cabeca;
   int taminfo;
-}Lista; 
+}Lista;
+
+
+void inicializa_lista(Lista *p, int c);
+
+int lista_vazia(Lista l);
+
+int insereNoInicio(Lista *p, void *info);
