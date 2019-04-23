@@ -7,3 +7,26 @@
   //Inserção: no inicio, no fim, numa posição, em ordem ... 
   //Remoção: no inicio, no fim, numa posição, em ordem ...
   //Modifição/ Leitura : em uma posição.
+/*
+--------------------------implementação--------------------------
+
+- é posivel utilizar VETORES;
+-------------------------------------------------------------------
+|2|4|8|16|........................................................|
+-------------------------------------------------------------------
+            *PROBLEMA no ACESSO ao meio da lista 
+                            |
+                            -> Inserção e remoção
+-A lista será implementada como uma coleção de NÓS ENCADEADOS:
+-----       -----                ------
+|2| |       |4| | --           ->|16| | --   
+-----       -----   |  -----  |  ------   |
+                     ->|8| |--            =(NULL)
+                       -----
+
+
+---------------------------MODELO PROPOSTO--------------------------
+
+-> Estrutura genérica
+
+*/
