@@ -17,3 +17,7 @@ void inicializa_lista(Lista *p, int c);
 int lista_vazia(Lista l);
 
 int insereNoInicio(Lista *p, void *info);
+
+int removeDoInicio(Lista *p, void *info);
+
+void mostra_lista(Lista l, void (*mostra)(void *));
