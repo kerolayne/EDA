@@ -26,3 +26,33 @@ int insereNoInicio(Lista *p, void *info){
   p->cabeca = novo;
   return 1; //  sucesso.
 }
+
+int removeDoInicio(Lista *p, void *info){
+  if(lista_vazia(*p))
+    return  ERRO_LISTA_VAZIA;
+
+  memcpy(info, p->cabeca->info, p->taminfo);
+
+  Elemento *aux = p->cabeca;
+
+  p->cabeca = aux->proximo;
+
+  free(aux->info);
+  free(aux);
+
+  return 1;
+}
+
+
+void mostra_lista(Lista l, void (*mostra)(void *)){
+    if(lista_vazia(l))
+      printf("lista vazia!\n");
+    else {
+      printf("dados da lista:\n");
+      Elemento *p = l.cabeca;
+      while (p != NULL) {
+        mostra(p->info);
+        p = p->proximo;
+      }
+    }
+}
