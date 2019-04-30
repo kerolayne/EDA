@@ -3,9 +3,11 @@
 #include <stdio.h>
 #include <string.h>
 
-void inicializa_lista(Lista *p, int c) {
+Elemento *aloca_ele(void *info, int t);
+
+void inicializa_lista(Lista *p, int t) {
   p->cabeca = NULL;
-  P->taminfo = t;
+  p->taminfo = t;
 }
 
 int lista_vazia(Lista l){
@@ -55,4 +57,34 @@ void mostra_lista(Lista l, void (*mostra)(void *)){
         p = p->proximo;
       }
     }
+}
+
+int insereNoFim(Lista *l, void *info){
+  if(lista_vazia(*l))
+    return insereNoInicio(l, info);
+  Elemento *p = l->cabeca;
+  while(p->proximo!=NULL){
+    p=p->proximo;
+  }
+  Elemento *novo = aloca_ele(info, l->taminfo);
+
+  if(novo == NULL)
+    return 0;
+  p->proximo = novo;
+  novo->proximo = NULL;
+  return 1;
+
+}
+
+Elemento *aloca_ele(void *info, int t){
+  Elemento *p = malloc(sizeof(Elemento));
+  if(p==NULL)
+    return NULL;
+  p->info = malloc(t);
+  if(p->info ==   NULL){
+    free(p);
+    return NULL;
+  }
+  memcpy(p->info, info, t);
+  return p;
 }
