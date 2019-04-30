@@ -88,3 +88,42 @@ Elemento *aloca_ele(void *info, int t){
   memcpy(p->info, info, t);
   return p;
 }
+
+int removeDoFim(Lista *l, void *info){
+  if(lista_vazia(*l))
+    return  ERRO_LISTA_VAZIA;
+    
+  if(l->cabeca->proximo==NULL)
+    return removeDoInicio(l, info);
+    
+  Elemento *p = l->cabeca;
+  
+  while(p->proximo-> proximo!= NULL){
+      p=p->proximo;
+  }
+  Elemento *aux = p->proximo;
+  memcpy(info, aux->info,l->taminfo);
+  
+  free(aux -> info);
+  free(aux);
+  
+  p->proximo = NULL;
+  
+  return 1 ;
+}
+
+int contaElementos(Lista *l){
+    int cont = 0;
+    if(lista_vazia(*l))
+        return  ERRO_LISTA_VAZIA;
+        
+    while(l->proximo != NULL){
+        cont += 1;
+    }
+    
+    printf("%d", cont);
+    
+    return 0;
+}
+  
+  
