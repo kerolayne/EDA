@@ -21,3 +21,5 @@ int insereNoInicio(Lista *p, void *info);
 int removeDoInicio(Lista *p, void *info);
 
 void mostra_lista(Lista l, void (*mostra)(void *));
+
+int insereNoFim(Lista *l, void *info);
