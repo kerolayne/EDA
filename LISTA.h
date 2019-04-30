@@ -1,25 +1,40 @@
-#define ERRO_LISTA_VAZIA -1
+#include "lista.h"
+#include <stdio.h>
 
-typedef struct ele{
-    void *info;
-    struct ele *proximo;
+void mostra_float(void *x);
 
-}Elemento;
+int main(int argc, char const *argv[]) {
+  Lista l1;
 
-typedef struct{
-  Elemento *cabeca;
-  int taminfo;
-}Lista;
+  float x = 9;
+
+  inicializa_lista(&l1, sizeof(float));
+
+  insereNoInicio(&l1, &x);
+  x = 3;
+
+  //removeDoInicio(&l1, &x);
+
+  mostra_lista(l1, mostra_float);
+
+  insereNoFim(&l1, &x);
+
+  mostra_lista(l1, mostra_float);
+
+  insereNoFim(&l1, &x);
+  insereNoFim(&l1, &x);
+  
+  removeDoFim(&l1, &x);
+  
+  
+  
+  mostra_lista(l1, mostra_float);
+  
+    return 0;
+}
 
 
-void inicializa_lista(Lista *p, int c);
-
-int lista_vazia(Lista l);
-
-int insereNoInicio(Lista *p, void *info);
-
-int removeDoInicio(Lista *p, void *info);
-
-void mostra_lista(Lista l, void (*mostra)(void *));
-
-int insereNoFim(Lista *l, void *info);
+void mostra_float(void *x){
+  float *p = x;
+  printf("%.1f\n", *p);
+}
