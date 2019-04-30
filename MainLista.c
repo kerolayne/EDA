@@ -13,10 +13,13 @@ int main(int argc, char const *argv[]) {
   insereNoInicio(&l1, &x);
   x = 3;
 
-  removeDoInicio(&l1, &x);
+  //removeDoInicio(&l1, &x);
 
   mostra_lista(l1, mostra_float);
 
+  insereNoFim(&l1, &x);
+
+  mostra_lista(l1, mostra_float);
   return 0;
 }
 
