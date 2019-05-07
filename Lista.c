@@ -163,7 +163,7 @@ int insereNaPosicao(Lista * l, void *info, int pos){
 
   p->proximo = novo;
 
-  p->num_ele += 1;
+  l->num_ele += 1;
 
   return 1;
 }
