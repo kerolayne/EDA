@@ -1,4 +1,4 @@
-#include "lista.h"
+#include "LISTA.h"
 #include <stdio.h>
 
 void mostra_float(void *x);
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]) {
   insereNoFim(&l1, &x);
 
 
-  float x = 16;
+  x = 16;
 
   insereNaPosicao(&l1, &x, 2);
 
