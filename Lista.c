@@ -1,4 +1,4 @@
-#include "lista.h"
+#include "LISTA.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -80,7 +80,7 @@ int insereNoFim(Lista *l, void *info){
   p->proximo = novo;
   novo->proximo = NULL;
 
-  p->num_ele += 1;
+  l->num_ele += 1;
 
   return 1;
 
@@ -114,7 +114,7 @@ int removeDoFim(Lista *l, void *info){
   Elemento *aux = p->proximo;
   memcpy(info, aux->info,l->taminfo);
 
-    p->num_ele -= 1;
+    l->num_ele -= 1;
 
   free(aux -> info);
   free(aux);
@@ -129,7 +129,7 @@ int contaElementos(Lista *l){
     if(lista_vazia(*l))
         return  ERRO_LISTA_VAZIA;
 
-    while(l->proximo != NULL){
+    while(l->cabeca != NULL){
         cont += 1;
     }
 
