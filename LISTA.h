@@ -1,4 +1,5 @@
 #define ERRO_LISTA_VAZIA -1
+#define ERRO_POSICAO_INVALIDA -2
 
 typedef struct ele{
     void *info;
@@ -9,6 +10,7 @@ typedef struct ele{
 typedef struct{
   Elemento *cabeca;
   int taminfo;
+  int num_ele;
 }Lista;
 
 
@@ -27,3 +29,5 @@ int insereNoFim(Lista *l, void *info);
 int removeDoFim(Lista *l, void *info);
 
 int contaElementos(Lista *l);
+
+int insereNaPosicao(Lista * l, void *info, int pos);
