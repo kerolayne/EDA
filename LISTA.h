@@ -31,3 +31,4 @@ int removeDoFim(Lista *l, void *info);
 int contaElementos(Lista *l);
 
 int insereNaPosicao(Lista * l, void *info, int pos);
+
