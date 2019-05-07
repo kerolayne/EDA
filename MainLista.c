@@ -19,7 +19,17 @@ int main(int argc, char const *argv[]) {
 
   insereNoFim(&l1, &x);
 
+
+  float x = 16;
+
+  insereNaPosicao(&l1, &x, 2);
+
+
+
   mostra_lista(l1, mostra_float);
+
+
+
   return 0;
 }
 
