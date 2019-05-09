@@ -202,3 +202,39 @@ int removeDaPosicao(Lista *l, void *info, int pos){
 
     return 1;
 }
+
+int modificaNaPosicao(Lista *l, void *info, int pos){
+    if(lista_vazia(*l))
+        return ERRO_LISTA_VAZIA;
+
+    if (pos < 0 || pos > l->num_ele)
+      return ERRO_POSICAO_INVALIDA;
+
+    Elemento *p = l->cabeca;
+    int cont = 0;
+
+    while(cont< pos-1){
+        p=p->proximo;
+        cont++;
+    }
+    memcpy(p->info, info, l->taminfo);
+    return 1;
+}
+int leNaPosiscao(Lista *l, void *info, int pos){
+  if(lista_vazia(*l))
+      return ERRO_LISTA_VAZIA;
+
+  if (pos < 0 || pos > l->num_ele)
+    return ERRO_POSICAO_INVALIDA;
+
+  Elemento *p = l->cabeca;
+  int cont = 0;
+
+  while(cont< pos-1){
+      p=p->proximo;
+      cont++;
+  }
+  memcpy(info, p->info, l-> taminfo);
+  
+  return 1;
+}
