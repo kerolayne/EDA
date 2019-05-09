@@ -167,3 +167,38 @@ int insereNaPosicao(Lista * l, void *info, int pos){
 
   return 1;
 }
+
+int removeDaPosicao(Lista *l, void *info, int pos){
+    if(lista_vazia(*l))
+        return ERRO_LISTA_VAZIA;
+
+    if (pos < 0 || pos > l->num_ele)
+      return ERRO_POSICAO_INVALIDA;
+
+    if (pos == 0) {
+      return removeDoInicio(l, info);
+    }
+    if (pos == l->num_ele) {
+      return removeDoFim(l, info);
+    }
+
+    Elemento *p = l->cabeca;
+    int cont = 0;
+
+    while(cont< pos-1){
+        p=p->proximo;
+        cont++;
+    }
+    Elemento *aux = p->proximo;
+
+    p->proximo = aux->proximo;
+
+    memcpy(info, aux ->info, l->taminfo);
+
+    free(aux->info);
+    free(aux);
+
+    l->num_ele--;
+
+    return 1;
+}
