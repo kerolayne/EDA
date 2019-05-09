@@ -24,7 +24,7 @@ int main(int argc, char const *argv[]) {
 
   insereNaPosicao(&l1, &x, 2);
 
-
+  removeDaPosicao(&l1, &y, 2);
 
   mostra_lista(l1, mostra_float);
 
