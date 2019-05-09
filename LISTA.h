@@ -32,3 +32,4 @@ int contaElementos(Lista *l);
 
 int insereNaPosicao(Lista * l, void *info, int pos);
 
+int removeDaPosicao(Lista *l, void *info, int pos);
