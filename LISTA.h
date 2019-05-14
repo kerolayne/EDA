@@ -37,3 +37,7 @@ int removeDaPosicao(Lista *l, void *info, int pos);
 int modificaNaPosicao(Lista *l, void *info, int pos);
 
 int leNaPosiscao(Lista *l, void *info, int pos);
+
+int insereEmOrdem(Lista *l, void *info, int (*compara)(void *, void *));
+
+//int desaloca_lista()
