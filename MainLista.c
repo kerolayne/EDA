@@ -1,17 +1,25 @@
 #include "LISTA.h"
 #include <stdio.h>
 
+
 void mostra_float(void *x);
+
+int compara_float(void *x, void *y);
 
 int main(int argc, char const *argv[]) {
   Lista l1;
 
-  float x = 9;
+  float x, y;
 
   inicializa_lista(&l1, sizeof(float));
 
+  printf("digite um valor");
+  scanf("%f", &x);
+
   insereNoInicio(&l1, &x);
-  x = 3;
+
+  printf("digite um valor");
+  scanf("%f", &x);
 
   //removeDoInicio(&l1, &x);
 
@@ -20,11 +28,15 @@ int main(int argc, char const *argv[]) {
   insereNoFim(&l1, &x);
 
 
-  x = 16;
+  printf("digite um valor");
+  scanf("%f", &x);
 
   insereNaPosicao(&l1, &x, 2);
 
-  removeDaPosicao(&l1, &y, 2);
+  //removeDaPosicao(&l1, &y, 2);
+
+  insereEmOrdem(&l1, &x, compara_float);
+
 
   mostra_lista(l1, mostra_float);
 
@@ -33,6 +45,15 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 
+
+int compara_float(void *x, void *y){
+  float *a = x, *b = y;
+  if(*a > *b)
+    return 1;
+  if (*a < *b ) {
+    return -1;
+  }
+}
 
 void mostra_float(void *x){
   float *p = x;
