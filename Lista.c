@@ -235,6 +235,16 @@ int leNaPosiscao(Lista *l, void *info, int pos){
       cont++;
   }
   memcpy(info, p->info, l-> taminfo);
-  
+
   return 1;
+}
+
+int insereEmOrdem(Lista *l, void *info, int (*compara)(void *, void *)){
+  int cont = 0;
+  Elemento *p =l->cabeca;
+  while(p!=NULL && compara(info, p->info) > 0){
+    cont ++;
+    p = p->proximo;
+  }
+  return insereNaPosicao(l, info, cont);
 }
