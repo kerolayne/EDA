@@ -85,3 +85,72 @@ int insereNoFim(LDE *l, void *info){
   return 1;
 
 }
+
+int insereNaPosicao(LDE * l, void *info, int pos){
+  if (pos < 0 || pos > l->num_ele)
+    return ERRO_POSICAO_INVALIDA;
+
+  if (pos == 0) {
+    return insereNoInicio(l, info);
+  }
+  if (pos == l->num_ele) {
+    return insereNoFim(l, info);
+  }
+  EleDuplo *p = l->cabeca;
+  int cont = 0;
+
+  while (cont < pos - 1) {
+    p = p->suc;
+    cont ++;
+  }
+  EleDuplo *novo = aloca_ele(info, l->tamInfo);
+  if(novo == NULL)
+    return 0;
+
+  novo->suc = p->suc;
+
+  p->suc = novo;
+
+  novo->ant = p;
+  novo->suc->ant = novo;
+
+  l->num_ele += 1;
+
+  return 1;
+}
+
+int removeDaPosicao(LDE *l, void *info, int pos){
+    if(lista_vazia(*l))
+        return ERRO_LISTA_VAZIA;
+
+    if (pos < 0 || pos >= l->num_ele)
+      return ERRO_POSICAO_INVALIDA;
+
+    if (pos == 0) {
+      return removeDoInicio(l, info);
+    }
+    if (pos == l->num_ele) {
+      return removeDoFim(l, info);
+    }
+
+    EleDuplo *p = l->cabeca;
+    int cont = 0;
+
+    while(cont < pos-1){
+        p = p->suc;
+        cont ++;
+    }
+    EleDuplo *aux = p->suc;
+
+    p->suc = aux->suc;
+    p->suc->ant = p;
+
+    memcpy(info, aux->info, l->tamInfo);
+
+    free(aux->info);
+    free(aux);
+
+    l->num_ele--;
+
+    return 1;
+}
