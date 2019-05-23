@@ -16,3 +16,7 @@ int insereNoInicio(LDE *p, void *info);
 int removeDoInicio(LDE *p, void *info);
 
 int insereNoFim(LDE *l, void *info);
+
+int insereNaPosicao(LDE * l, void *info, int pos);
+
+int removeDaPosicao(LDE *l, void *info, int pos);
