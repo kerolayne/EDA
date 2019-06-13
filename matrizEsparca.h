@@ -40,4 +40,4 @@ int leNaPosiscao(Lista *l, void *info, int pos);
 
 int insereEmOrdem(Lista *l, void *info, int (*compara)(void *, void *));
 
-void desaloca_lista(Lista *l);
+//int desaloca_lista()

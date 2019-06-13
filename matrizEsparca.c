@@ -248,10 +248,3 @@ int insereEmOrdem(Lista *l, void *info, int (*compara)(void *, void *)){
   }
   return insereNaPosicao(l, info, cont);
 }
-void desaloca_lista(Lista *l){
-  int i;
-  for(i = 0; i <= l->cabeca; i++){
-    free(l->cabeca[i]);
-  }
-  free(l->cabeca);
-}

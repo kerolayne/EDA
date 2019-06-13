@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 int main(int argc, char const *argv[]) {
-  int l,c,i,j;
+  int l,c,i,j, x;
 
   printf("Quantas linhas e quantas colunas?\n");
   scanf("%d %d", &l, &c);
