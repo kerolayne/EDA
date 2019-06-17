@@ -1,10 +1,10 @@
-#define ERRO_LISTA_VAZIA -1
+#define ERRO_MATRIZ_VAZIA -1
 #define ERRO_POSICAO_INVALIDA -2
 
 typedef struct ele{
     void *info;
+    int *indice;
     struct ele *proximo;
-
 }Elemento;
 
 typedef struct{
@@ -16,28 +16,29 @@ typedef struct{
 
 void inicializa_lista(Lista *p, int c);
 
-int lista_vazia(Lista l);
+int matriz_vazia(Lista l);
 
-int insereNoInicio(Lista *p, void *info);
+int insereNoInicio(Lista *p, void *info, int *indice);
 
-int removeDoInicio(Lista *p, void *info);
+int removeDoInicio(Lista *p, void *info, int *indice);
 
-void mostra_lista(Lista l, void (*mostra)(void *));
+void mostra_matriz(Lista l, void (*mostra)(void *), int linha, int coluna);
 
-int insereNoFim(Lista *l, void *info);
+int insereNoFim(Lista *l, void *info, int *indice);
 
-int removeDoFim(Lista *l, void *info);
+int removeDoFim(Lista *l, void *info, int *indice);
 
 int contaElementos(Lista *l);
 
-int insereNaPosicao(Lista * l, void *info, int pos);
+int insereNaPosicao(Lista * l, void *info, int pos, int *indice);
 
-int removeDaPosicao(Lista *l, void *info, int pos);
+int removeDaPosicao(Lista *l, void *info, int pos, int *indice);
 
-int modificaNaPosicao(Lista *l, void *info, int pos);
+int modificaNaPosicao(Lista *l, void *info, int pos, int *indice);
 
-int leNaPosiscao(Lista *l, void *info, int pos);
+int leNaPosiscao(Lista *l, void *info, int pos, int *indice);
 
-int insereEmOrdem(Lista *l, void *info, int (*compara)(void *, void *));
+int insereEmOrdem(Lista *l, void *info, int (*compara)(void *, void *), int *indice);
 
+Lista *matriz(Lista m, int l, int c);
 //int desaloca_lista()
