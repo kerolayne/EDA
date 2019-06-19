@@ -2,20 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int compara_float(void *x, void *y){
-  int *a = x, *b = y;
-  if(*a > *b)
-    return 1;
-  if (*a < *b ) {
-    return -1;
-  }
-}
-
-void mostra_int(void *x){
-  int *p = x;
-  printf("%d |", *p);
-}
-
 int main(int argc, char const *argv[]) {
 
     int o, l1, c1, l2, c2;
