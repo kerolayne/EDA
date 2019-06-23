@@ -2,7 +2,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int compara_float(void *x, void *y){
+  int *a = x, *b = y;
+  if(*a > *b)
+    return 1;
+  if (*a < *b ) {
+    return -1;
+  }
+}
+
+void mostra_int(void *x){
+  int *p = x;
+  printf("%d |", *p);
+}
+
 int main(int argc, char const *argv[]) {
+
+   matrizEsparsa x;
+
+   inicializa_matriz(&x, 3, 3);
+
+   mostra_matriz(x);
+
+   insereNaPosicaoMatriz(&x, 2, 1, 6);
+
+
+/*
+
 
     int o, l1, c1, l2, c2;
 
@@ -32,7 +58,8 @@ int main(int argc, char const *argv[]) {
               scanf("%d", &l1);
               scanf("%d", &c1);
               //cria matriz 1
-              matriz(p1, l1, c1);
+              matrix(p1, l1, c1);
+              //matriz(p1, l1, c1);
           break;
 
           case 2:
@@ -42,7 +69,7 @@ int main(int argc, char const *argv[]) {
               scanf("%d", &l2);
               scanf("%d", &c2);
               //cria matriz 2
-              matriz(p2, l2, c2);
+              matrix(p2, l2, c2);
 
           break;
 
@@ -72,12 +99,13 @@ int main(int argc, char const *argv[]) {
               mostra_matriz()
 
           break;
-          */
+
         }
 
         if (o > 7) {
           printf("operação não encontrada, tente novamente!!!!\n");
         }
-  } while(o!=0);
+  } while(o!=0);*/
   return 0;
 }
+
