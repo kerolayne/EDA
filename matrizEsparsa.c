@@ -1,5 +1,5 @@
-#include "matrizEsparca.h"
-#include "Lista.h"
+#include "matrizEsparsa.h"
+#include "LISTA.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -7,8 +7,8 @@
 
 void inicializa_matriz(MatrizEsparsa *matriz, int linha, int coluna){
 
-    matriz->nLinha = linha ;
-    matriz->nColuna = coluna;
+    matriz->nlinha = linha ;
+    matriz->ncoluna = coluna;
     inicializa_lista(&matriz->m, sizeof(Lista));
     int i;
     for (i = 0; i < linha; i++) {
@@ -18,26 +18,26 @@ void inicializa_matriz(MatrizEsparsa *matriz, int linha, int coluna){
     }
 }
 //insere na posição
-int insereNaPosicaoMatriz(MatrizEsparca &matriz, int linha, int coluna, int valor){
-    for (i = 0; i < linha; i++) {
-        for (j = 0; j < coluna; j++) {
-
-        }
-    }
-
+int insereNaPosicaoMatriz(MatrizEsparsa matriz, int linha, int coluna, int valor){
+    EntradaMatriz e;
+    e->linha = linha;
+    e->coluna = coluna;
+    e->valor = valor;
 }
 
 //le na posiçao
-void lePosicaoMatriz(MatrizEsparca &matriz, int linha, int coluna){
+//void lePosicaoMatriz(MatrizEsparsa &matriz, int linha, int coluna){
 
-}
+//}
 
 //remove na posição
+/*
 int removeNaPosicaoMatriz(){
 
+    return 0;
 }
 //
-
+/*
 int matrix(Lista m, int l, int c){
   int i, j, x;
   Lista s;
@@ -53,12 +53,12 @@ int matrix(Lista m, int l, int c){
       insereNoFim(&m, &componentes, &i);
   }
 }
-
-void mostra_matriz(MatrizEsparca mat){
-    Lista l
+*/
+void mostra_matriz(MatrizEsparsa mat){
+    Lista l;
     int i, j, k, w;
 
-    for ( i = 0; i < mat.nlinhas ; i++) {
+    for ( i = 0; i < mat.nlinha ; i++) {
       leNaPosiscao(&mat.m, &l, i);
       j = 0; k = 0;
       EntradaMatriz e;
