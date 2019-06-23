@@ -1,7 +1,7 @@
-#include "matrizEsparca.h"
+#include "matrizEsparsa.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+/*
 int compara_float(void *x, void *y){
   int *a = x, *b = y;
   if(*a > *b)
@@ -15,16 +15,16 @@ void mostra_int(void *x){
   int *p = x;
   printf("%d |", *p);
 }
-
+*/
 int main(int argc, char const *argv[]) {
 
-   matrizEsparsa x;
+   MatrizEsparsa x;
 
    inicializa_matriz(&x, 3, 3);
 
    mostra_matriz(x);
 
-   insereNaPosicaoMatriz(&x, 2, 1, 6);
+   insereNaPosicaoMatriz(x, 2, 1, 6);
 
 
 /*
@@ -108,4 +108,3 @@ int main(int argc, char const *argv[]) {
   } while(o!=0);*/
   return 0;
 }
-
