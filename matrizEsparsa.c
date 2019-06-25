@@ -23,6 +23,31 @@ int insereNaPosicaoMatriz(MatrizEsparsa matriz, int linha, int coluna, int valor
     e->linha = linha;
     e->coluna = coluna;
     e->valor = valor;
+    Lista *lista = matriz->m;
+    Elemento *elemento = lista->prox;
+    int i = 0;
+    for(i; i < linha - 1; elemento = elemento->prox);
+    Lista *listaColuna = elemento->info;
+    Elemento *elementoColuna = listaColuna->proximo;
+    if(elementoColuna == NULL){ //Insere aqui)
+        inserNoFim(listaColuna, e);
+    }
+    Elemento *auxiliar;
+    else{
+        while(elementoColuna != NULL && elementoColuna->coluna > coluna){
+            auxiliar = elementoColuna;
+            elementoColuna = elementoColuna->proxima;
+        }
+        if(elementoColuna == NULL){
+            inserNoFim(listaColuna, e);
+        }
+        else{
+            Elemento *novo = malloc(sizeof(Elemento));
+            novo->coluna = coluna;
+            novo->proximo = elementoColuna;
+            auxiliar->proximo = novo;
+        }
+    }
 }
 
 //le na posiçao
